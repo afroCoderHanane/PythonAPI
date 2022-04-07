@@ -3,7 +3,8 @@ version: '3.3'
 services:
    flask-api:
      build: .
+     command: python3 server.py run -h 0.0.0.0
      ports:
-       - "5000:5000"
+       - "3037:5000"
      volumes:
-       - "/data"
+       - .:/python-api-docker
