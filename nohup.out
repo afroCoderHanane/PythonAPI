@@ -1,0 +1,236 @@
+Vim: Warning: Output is not to a terminal
+Vim: Warning: Input is not from a terminal
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;24r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?2004l[>4;m[?2004h[>4;2m[?25l[24;1H"server.py"[?2004l[>4;m[?2004h[>4;2m 110L, 2990B[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[1;5H[36mid[m = db.Column(db.Integer, primary_key = [36mTrue[m)[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m
+    title = db.Column(db.String([31m75[m))[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m
+    body = db.Column(db.String([31m200[m))[?2004l[>4;m[?2004h[>4;2m
+    date = db.Column(db.Date)[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m
+    user_id = db.Column(db.Integer, db.ForeignKey([31m"user.id"[m), nullable = [36mFalse[m)
+
+[34m#[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[m
+
+[35m@[m[36mapp.route[m([31m"/"[m,methods=[[31m"GET"[m])
+[38;5;130mdef[m [36mwelcome_message[m():[?2004l[>4;m[?2004h[>4;2m
+    [38;5;130mreturn[m [31m"Welcome to Flask API"[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[m
+
+[35m@[m[36mapp.route[m([31m"/user"[m, methods=[[31m"POST"[m])
+[38;5;130mdef[m [36mcreate_user[m():[?2004l[>4;m[?2004h[>4;2m
+    data = request.get_json()[?2004l[>4;m[?2004h[>4;2m
+    new_user = User([?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[17;13Hname= data[[31m"name"[m],[?2004l[>4;m[?2004h[>4;2m[18;13Hemail = data[[31m"email"[m],[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[19;13Haddress = data[[31m"address"[m],[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[20;13Hphone = data[[31m"phone"[m][21;13H)[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m
+    db.session.add(new_user)[?2004l[>4;m[?2004h[>4;2m
+    db.session.commit()[24;63H52,0-1[8C45%[12;1H[?25h[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[?2004l[>4;m[?2004h[>4;2m[24;1H[?2004l[>4;m[?1004l[?2004l[?1l>[>4;m[?1049l[23;0;0tVim: Error reading input, exiting...
+Vim: Finished.
+[24;1H[23;2t[23;1t
+2->3->4->None
+ * Serving Flask app 'server' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 642-038-385
+127.0.0.1 - - [22/Apr/2022 16:51:30] "GET / HTTP/1.1" 200 -
+ * Detected change in '/home/hanane/PythonAPI/server.py', reloading
+2->3->4->None
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 642-038-385
+2->3->4->None
+ * Serving Flask app 'server' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 362-513-739
+127.0.0.1 - - [09/May/2022 12:07:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [09/May/2022 12:07:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [09/May/2022 12:13:44] "[35m[1mGET /user/descending_id HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/hanane/PythonAPI/server.py", line 69, in get_all_users_descending
+    usersll = LinkedList.linkedList()
+AttributeError: module 'LinkedList' has no attribute 'linkedList'
+ * Detected change in '/home/hanane/PythonAPI/LinkedList.py', reloading
+2->3->4->None
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 362-513-739
+ * Detected change in '/home/hanane/PythonAPI/server.py', reloading
+2->3->4->None
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 362-513-739
+ * Detected change in '/home/hanane/PythonAPI/LinkedList.py', reloading
+2->3->4->None
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 362-513-739
+127.0.0.1 - - [09/May/2022 12:19:34] "[35m[1mGET /user/descending_id HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/hanane/PythonAPI/server.py", line 79, in get_all_users_descending
+    return jsonify(userlls.convert_to_list()),200
+NameError: name 'userlls' is not defined
+ * Detected change in '/home/hanane/PythonAPI/server.py', reloading
+2->3->4->None
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 362-513-739
+127.0.0.1 - - [09/May/2022 12:21:37] "[35m[1mGET /user/descending_id HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/hanane/PythonAPI/server.py", line 79, in get_all_users_descending
+    return jsonify(userll.convert_to_list()),200
+NameError: name 'userll' is not defined
+127.0.0.1 - - [09/May/2022 12:21:39] "[35m[1mGET /user/descending_id HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/hanane/PythonAPI/server.py", line 79, in get_all_users_descending
+    return jsonify(userll.convert_to_list()),200
+NameError: name 'userll' is not defined
+127.0.0.1 - - [09/May/2022 12:21:40] "[35m[1mGET /user/descending_id HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/hanane/PythonAPI/server.py", line 79, in get_all_users_descending
+    return jsonify(userll.convert_to_list()),200
+NameError: name 'userll' is not defined
+ * Detected change in '/home/hanane/PythonAPI/server.py', reloading
+2->3->4->None
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 362-513-739
+127.0.0.1 - - [09/May/2022 12:22:59] "GET /user/descending_id HTTP/1.1" 200 -
+ * Detected change in '/home/hanane/PythonAPI/server.py', reloading
+2->3->4->None
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 362-513-739
+ * Detected change in '/home/hanane/PythonAPI/LinkedList.py', reloading
+2->3->4->None
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 362-513-739
+ * Detected change in '/home/hanane/PythonAPI/server.py', reloading
+2->3->4->None
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 362-513-739
+ * Detected change in '/home/hanane/PythonAPI/LinkedList.py', reloading
+2->3->4->None
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 362-513-739
+127.0.0.1 - - [09/May/2022 12:57:36] "GET /user/ascending_id HTTP/1.1" 200 -
+127.0.0.1 - - [09/May/2022 12:58:16] "[35m[1mGET /user/10 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/hanane/PythonAPI/server.py", line 114, in get_one_user
+    user = all_users_ll.get_user_by_id(user_id)
+  File "/home/hanane/PythonAPI/LinkedList.py", line 54, in get_user_by_id
+    if node.data["id"] is int(user_id):
+AttributeError: 'Node' object has no attribute 'data'
+ * Detected change in '/home/hanane/PythonAPI/server.py', reloading
+2->3->4->None
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 362-513-739
+127.0.0.1 - - [09/May/2022 12:59:14] "[35m[1mGET /user/10 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2095, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2080, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hanane/PythonAPI/venv/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/hanane/PythonAPI/server.py", line 114, in get_one_user
+    user = all_users_ll.get_user_by_id(user_id)
+  File "/home/hanane/PythonAPI/LinkedList.py", line 54, in get_user_by_id
+    if node.data["id"] is int(user_id):
+AttributeError: 'Node' object has no attribute 'data'
+ * Detected change in '/home/hanane/PythonAPI/LinkedList.py', reloading
+2->3->4->None
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 362-513-739
+127.0.0.1 - - [09/May/2022 13:01:14] "GET /user/10 HTTP/1.1" 200 -
+ * Detected change in '/home/hanane/PythonAPI/server.py', reloading
+2->3->4->None
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 362-513-739
